@@ -3,6 +3,7 @@ using UnityEngine;
 public class Projetil : MonoBehaviour
 {
     [SerializeField] private float velocidade = 15f;
+    [SerializeField] private int dano;
 
     private Rigidbody2D rb;
 
@@ -18,15 +19,18 @@ public class Projetil : MonoBehaviour
         rb.linearVelocity = direcao.normalized * velocidade;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
-
-        if(!collision.gameObject.CompareTag("Projetil") && !collision.gameObject.CompareTag("Player"))
+        if(!other.gameObject.CompareTag("Projetil"))
         {
             rb.linearVelocity = Vector2.zero;
 
             gameObject.SetActive(false);
+        }
+
+        if(other.gameObject.GetComponent<Vida>())
+        {
+            other.gameObject.GetComponent<Vida>().CausarDano(dano);
         }
     }
 }

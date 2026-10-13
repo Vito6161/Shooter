@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 105416866}
   - component: {fileID: 105416865}
   - component: {fileID: 105416867}
+  - component: {fileID: 105416868}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -187,7 +188,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.7735849, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.7719766, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -258,6 +259,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &105416868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105416864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7c415c9c7260c46b6ffc8d37e90c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Vida
+  vida: 300
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,6 +1037,7 @@ GameObject:
   - component: {fileID: 1799079184}
   - component: {fileID: 1799079183}
   - component: {fileID: 1799079188}
+  - component: {fileID: 1799079189}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1166,7 +1181,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.91090953, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1206,6 +1221,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Shooter
   pool: {fileID: 1394500047}
   pontoDeDisparo: {fileID: 2091324954}
+  intervalo: 0.5
+--- !u!114 &1799079189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799079182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7c415c9c7260c46b6ffc8d37e90c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Vida
+  vida: 100
 --- !u!1 &2091324953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,7 +1260,7 @@ Transform:
   m_GameObject: {fileID: 2091324953}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.619, z: 0}
+  m_LocalPosition: {x: 0, y: 0.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
