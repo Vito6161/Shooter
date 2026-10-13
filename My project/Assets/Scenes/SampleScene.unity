@@ -208,8 +208,8 @@ Transform:
   m_GameObject: {fileID: 105416864}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0282, y: 10.72, z: 0}
-  m_LocalScale: {x: 20.247677, y: 8.2384, z: 1}
+  m_LocalPosition: {x: 0.1054, y: 10.72, z: 0}
+  m_LocalScale: {x: 16.641968, y: 8.2384, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -773,8 +773,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1794826ce80de3745ab6c4c8efbce417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossPool
-  prefab: {fileID: 0}
-  quantidadeInicial: 20
 --- !u!1 &1532097960
 GameObject:
   m_ObjectHideFlags: 0

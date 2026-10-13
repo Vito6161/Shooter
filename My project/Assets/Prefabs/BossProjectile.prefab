@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Projetil
   velocidade: 15
   dano: 10
-  isBoss: 1
+  bossProjectile: 1
 --- !u!50 &7977326107837422840
 Rigidbody2D:
   serializedVersion: 5

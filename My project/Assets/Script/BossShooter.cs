@@ -17,7 +17,7 @@ public class BossShooter : MonoBehaviour
         }
         else
         {
-            pontoDeDisparo = new Vector3(Random.Range(-transform.localScale.x, transform.localScale.x), gameObject.GetComponent<SpriteRenderer>().localBounds.min.y, 0f);
+            pontoDeDisparo = new Vector3(Random.Range(-transform.localScale.x, transform.localScale.x), transform.localScale.y, 0f);
             Atirar();
             count = 0;
         }
