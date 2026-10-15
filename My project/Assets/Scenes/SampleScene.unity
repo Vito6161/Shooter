@@ -208,8 +208,8 @@ Transform:
   m_GameObject: {fileID: 105416864}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1054, y: 10.72, z: 0}
-  m_LocalScale: {x: 16.641968, y: 8.2384, z: 1}
+  m_LocalPosition: {x: 0.0242, y: 10.72, z: 0}
+  m_LocalScale: {x: 19.867495, y: 8.2384, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -273,6 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Vida
   vida: 300
+  state: 0
 --- !u!114 &105416869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,8 +286,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2e7aa5284b5fc439571b628f816de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossShooter
+  dataArray:
+  - {fileID: 11400000, guid: 0e6e6935a7bb5f246b0ebd0eb770a6a4, type: 2}
+  - {fileID: 11400000, guid: 47a8b677da3bdd34fb5998eee29e61b0, type: 2}
+  - {fileID: 11400000, guid: c7bc96d7793eb3f479272e96b2484f18, type: 2}
   pool: {fileID: 403977780}
-  intervalo: 4
 --- !u!1 &403977779
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +322,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProjectilePool
   prefab: {fileID: 3426689222112892852, guid: 8d69159b05b33ef41b59b0503fc2b98a, type: 3}
   quantidadeInicial: 30
+  dataArray:
+  - {fileID: 11400000, guid: 0e6e6935a7bb5f246b0ebd0eb770a6a4, type: 2}
+  - {fileID: 11400000, guid: 47a8b677da3bdd34fb5998eee29e61b0, type: 2}
+  - {fileID: 11400000, guid: c7bc96d7793eb3f479272e96b2484f18, type: 2}
 --- !u!4 &403977781
 Transform:
   m_ObjectHideFlags: 0
@@ -588,7 +596,7 @@ GameObject:
   - component: {fileID: 644230754}
   m_Layer: 0
   m_Name: Parede
-  m_TagString: Untagged
+  m_TagString: Parede
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -746,6 +754,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProjectilePool
   prefab: {fileID: 8152163611146889260, guid: d4866a417e5134b43a425f992a4188ea, type: 3}
   quantidadeInicial: 20
+  dataArray:
+  - {fileID: 11400000, guid: be5589872eaefa04f8210813d4268413, type: 2}
 --- !u!4 &1394500048
 Transform:
   m_ObjectHideFlags: 0
@@ -786,7 +796,7 @@ GameObject:
   - component: {fileID: 1532097963}
   m_Layer: 0
   m_Name: Parede (1)
-  m_TagString: Untagged
+  m_TagString: Parede
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1016,7 +1026,7 @@ GameObject:
   - component: {fileID: 1662907435}
   m_Layer: 0
   m_Name: Parede (2)
-  m_TagString: Untagged
+  m_TagString: Parede
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1055,7 +1065,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.09725952, y: 0}
+  m_Offset: {x: -0.5337858, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1065,7 +1075,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 20.42392, y: 1}
+  m_Size: {x: 52.18096, y: 1}
   m_EdgeRadius: 0
 --- !u!4 &1662907436
 Transform:
@@ -1294,6 +1304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Vida
   vida: 100
+  state: 0
 --- !u!1 &2091324953
 GameObject:
   m_ObjectHideFlags: 0

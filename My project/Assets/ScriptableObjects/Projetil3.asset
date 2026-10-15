@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657356b875ec09a498d1081868c9e2d7, type: 3}
+  m_Name: Projetil3
+  m_EditorClassIdentifier: Assembly-CSharp::States
+  intervalo: 2.5
+  velocidade: 25
+  dano: 20
+  projetil1: {fileID: 3426689222112892852, guid: 8d69159b05b33ef41b59b0503fc2b98a, type: 3}
+  cor: {r: 1, g: 0, b: 0.74652743, a: 1}

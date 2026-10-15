@@ -5,8 +5,29 @@ public class ProjectilePool : MonoBehaviour
 {
     [SerializeField] private Projetil prefab;
     [SerializeField] private int quantidadeInicial = 20;
+    private int countProjetil = 0;
+
+    [SerializeField] private States[] dataArray;
+    private States data;
+    private Vida state => gameObject.GetComponent<Vida>();
 
     private Queue<Projetil> pool = new Queue<Projetil>();
+
+
+    private void OnEnable()
+    {
+        StateOM.StateChanged += UpdateData;
+    }
+
+    private void OnDisable()
+    {
+        StateOM.StateChanged -= UpdateData;
+    }
+
+    void Start()
+    {
+        data = dataArray[0];
+    }
 
     private void Awake()
     {
@@ -30,8 +51,34 @@ public class ProjectilePool : MonoBehaviour
         }
         else
         {
-            projetil = Instantiate(prefab, transform);
+            projetil = Instantiate(data.projetil1, transform);
         }
+
+        if(gameObject.name != "Pool")
+        {
+            switch(countProjetil)
+            {
+                default:
+                case 0:
+                    countProjetil++;
+                    projetil.projetilIndex = 0;
+                    break;
+
+                case 1:
+                    countProjetil++;
+                    projetil.projetilIndex = 1;
+                    break;
+
+                case 2:
+                    countProjetil = 0;
+                    projetil.projetilIndex = 2;
+                    break;
+            }
+        }
+
+        projetil.dano = data.dano;
+        projetil.velocidade = data.velocidade;
+        projetil.cor = data.cor;
 
         return projetil;
     }
@@ -41,5 +88,10 @@ public class ProjectilePool : MonoBehaviour
         projetil.gameObject.SetActive(false);
 
         pool.Enqueue(projetil);
+    }
+
+    private void UpdateData(int index)
+    {
+        data = dataArray[index];
     }
 }
