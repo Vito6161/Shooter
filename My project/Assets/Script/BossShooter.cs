@@ -47,11 +47,15 @@ public class BossShooter : MonoBehaviour
 
     private void Atirar()
     {
-        Projetil projetil = pool.PegarProjetil();
+        if(!state.invulneravel)
+        {
+            Projetil projetil = pool.PegarProjetil();
 
-        projetil.transform.position = pontoDeDisparo;
+            projetil.transform.position = pontoDeDisparo;
 
-        projetil.Atirar(Vector2.down);
+            projetil.Atirar(Vector2.down);
+        }
+        
     }
 
     private void UpdateStats(int index)

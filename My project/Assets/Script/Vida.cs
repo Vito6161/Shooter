@@ -5,55 +5,137 @@ using System.Collections;
 public class Vida : MonoBehaviour
 {
     [SerializeField] public int vida;
+    [SerializeField] private int vidaMaxima = 300;
+
+    [Header("Invulnerabilidade do Boss")]
+    [SerializeField] private float tempoInvulneravel = 2f;
+    [SerializeField] private float intervaloPiscar = 0.1f;
+    [SerializeField] private Color corInvulneravel = new Color(0.6f, 0f, 1f);
+
+    public bool invulneravel { get; private set; }
+
     public int state;
-    
+    public int comportamento;
+
+    private int estadoAnterior = -1;
+    private SpriteRenderer spriteRenderer;
+    private Color corOriginal;
+    private Coroutine rotinaInvulnerabilidade;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer != null)
+            corOriginal = spriteRenderer.color;
+    }
+
     public void CausarDano(int dano)
     {
+        // Impede que o boss receba dano durante a invulnerabilidade.
+        if (gameObject.CompareTag("Boss") && invulneravel)
+            return;
+
         vida -= dano;
+        vida = Mathf.Max(vida, 0);
 
-        if(!gameObject.CompareTag("Player"))
+        if (!gameObject.CompareTag("Player"))
         {
-            switch(vida)
-            {
-                case >= 200: //estado 1 | PADRÃO
-                    state = 0;
-                    break;
-                case >= 100 when vida < 200: // estado 2 | VIDA MÉDIA
-                    state = 1;
-                    break;
-
-                case < 100 when vida > 0: //estado 3 | ULTIMO ESTÁGIO
-                    state = 2;
-                    break;
-            }
-
-            StateOM.OnStateChanged(state);
+            AtualizarEstado();
         }
 
-        if(gameObject.CompareTag("Player")) Debug.Log($"VIDA {vida} | STATE: {state}");
+        if (gameObject.CompareTag("Player"))
+            Debug.Log($"VIDA {vida} | STATE: {state}");
 
-        if(vida <= 0) Morte();
-        
+        if (vida <= 0)
+            Morte();
+    }
+
+    private void AtualizarEstado()
+    {
+        float porcentagemVida = (float)vida / vidaMaxima;
+
+        if (porcentagemVida > 0.5f)
+            state = 0;
+        else if (porcentagemVida > 0.2f)
+            state = 1;
+        else
+            state = 2;
+
+        if (state != estadoAnterior)
+        {
+            estadoAnterior = state;
+            comportamento = 0;
+
+            StateOM.OnStateChanged(state);
+
+            Debug.Log($"Boss: estado de vida {state}");
+
+            if (gameObject.CompareTag("Boss"))
+            {
+                if (rotinaInvulnerabilidade != null)
+                    StopCoroutine(rotinaInvulnerabilidade);
+
+                rotinaInvulnerabilidade =
+                    StartCoroutine(Invulnerabilidade());
+            }
+        }
+    }
+
+    private IEnumerator Invulnerabilidade()
+    {
+        invulneravel = true;
+
+        float tempoDecorrido = 0f;
+        bool roxo = false;
+
+        while (tempoDecorrido < tempoInvulneravel)
+        {
+            roxo = !roxo;
+
+            if (spriteRenderer != null)
+                spriteRenderer.color = roxo ? corInvulneravel : corOriginal;
+
+            yield return new WaitForSeconds(intervaloPiscar);
+            tempoDecorrido += intervaloPiscar;
+        }
+
+        if (spriteRenderer != null)
+            spriteRenderer.color = corOriginal;
+
+        invulneravel = false;
+        rotinaInvulnerabilidade = null;
+    }
+
+    public int ProximoComportamento()
+    {
+        comportamento = (comportamento + 1) % 3;
+        return state * 3 + comportamento;
     }
 
     public void Morte()
     {
         vida = 0;
+
+        if (rotinaInvulnerabilidade != null)
+            StopCoroutine(rotinaInvulnerabilidade);
+
+        invulneravel = false;
+
+        if (spriteRenderer != null)
+            spriteRenderer.color = corOriginal;
+
         bool temp;
 
-        if(gameObject.CompareTag("Player")) // player morreu
-        {
+        if (gameObject.CompareTag("Player"))
             temp = false;
-        }
-        else if (gameObject.CompareTag("Boss")) // boss morreu
-        {
+        else if (gameObject.CompareTag("Boss"))
             temp = true;
-        }
-        else temp = false;
+        else
+            temp = false;
 
         StateOM.OnEndGame(temp);
     }
-
 }
 
 public class StateOM
