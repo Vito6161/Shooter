@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Vida : MonoBehaviour
 {
-    [SerializeField] private int vida;
+    [SerializeField] public int vida;
     public int state;
     
     public void CausarDano(int dano)
@@ -39,7 +39,19 @@ public class Vida : MonoBehaviour
     public void Morte()
     {
         vida = 0;
-        return;
+        bool temp;
+
+        if(gameObject.CompareTag("Player")) // player morreu
+        {
+            temp = false;
+        }
+        else if (gameObject.CompareTag("Boss")) // boss morreu
+        {
+            temp = true;
+        }
+        else temp = false;
+
+        StateOM.OnEndGame(temp);
     }
 
 }
@@ -51,5 +63,12 @@ public class StateOM
     public static void OnStateChanged(int index)
     {
         StateChanged?.Invoke(index);
+    }
+
+    public static event Action<bool> EndGame;
+
+    public static void OnEndGame(bool resultado)
+    {
+        EndGame?.Invoke(resultado);
     }
 }

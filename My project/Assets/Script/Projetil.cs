@@ -91,7 +91,7 @@ public class Projetil : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(!other.gameObject.CompareTag("Projetil") && (bossProjectile == other.gameObject.CompareTag("Player") || bossProjectile == other.gameObject.CompareTag("Parede") ))
+        if(!other.gameObject.CompareTag("Projetil") && (bossProjectile == other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Parede") ))
         {
             rb.linearVelocity = Vector2.zero;
 

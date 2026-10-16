@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Projetil
   - Parede
+  - Boss
   layers:
   - Default
   - TransparentFX

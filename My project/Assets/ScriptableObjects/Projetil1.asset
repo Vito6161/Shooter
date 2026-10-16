@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::States
   intervalo: 3
   velocidade: 15
-  dano: 34
+  dano: 1
   projetil1: {fileID: 3426689222112892852, guid: 8d69159b05b33ef41b59b0503fc2b98a, type: 3}
   cor: {r: 0, g: 1, b: 0.093491495, a: 1}
