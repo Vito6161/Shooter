@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657356b875ec09a498d1081868c9e2d7, type: 3}
   m_Name: Projetil3
   m_EditorClassIdentifier: Assembly-CSharp::States
-  intervalo: 2.5
+  intervalo: 2
   velocidade: 25
-  dano: 20
+  dano: 34
   projetil1: {fileID: 3426689222112892852, guid: 8d69159b05b33ef41b59b0503fc2b98a, type: 3}
   cor: {r: 1, g: 0, b: 0.74652743, a: 1}

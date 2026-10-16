@@ -16,4 +16,4 @@ MonoBehaviour:
   velocidade: 20
   dano: 5
   projetil1: {fileID: 8152163611146889260, guid: d4866a417e5134b43a425f992a4188ea, type: 3}
-  cor: {r: 0.102731764, g: 1, b: 0, a: 1}
+  cor: {r: 1, g: 1, b: 1, a: 1}

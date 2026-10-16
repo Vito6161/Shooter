@@ -26,6 +26,7 @@ public class Projetil : MonoBehaviour
             StartCoroutine(MovimentoProjetil());
         }
 
+        cor.a = 1;
         sr.color = cor;
     }
 

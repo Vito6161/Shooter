@@ -25,12 +25,12 @@ public class Vida : MonoBehaviour
                 case < 100 when vida > 0: //estado 3 | ULTIMO ESTÁGIO
                     state = 2;
                     break;
-
-                StateOM.OnStateChanged(state);
             }
+
+            StateOM.OnStateChanged(state);
         }
 
-        Debug.Log($"VIDA {vida} | STATE: {state}");
+        if(gameObject.CompareTag("Player")) Debug.Log($"VIDA {vida} | STATE: {state}");
 
         if(vida <= 0) Morte();
         

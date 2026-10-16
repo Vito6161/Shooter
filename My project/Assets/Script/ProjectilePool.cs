@@ -9,7 +9,6 @@ public class ProjectilePool : MonoBehaviour
 
     [SerializeField] private States[] dataArray;
     private States data;
-    private Vida state => gameObject.GetComponent<Vida>();
 
     private Queue<Projetil> pool = new Queue<Projetil>();
 
@@ -74,11 +73,13 @@ public class ProjectilePool : MonoBehaviour
                     projetil.projetilIndex = 2;
                     break;
             }
-        }
 
+        }
+        
+        projetil.cor = data.cor;
         projetil.dano = data.dano;
         projetil.velocidade = data.velocidade;
-        projetil.cor = data.cor;
+        
 
         return projetil;
     }
@@ -92,6 +93,13 @@ public class ProjectilePool : MonoBehaviour
 
     private void UpdateData(int index)
     {
-        data = dataArray[index];
+        if(gameObject.name == "Pool")
+        {
+            data = dataArray[0];
+        }
+        else
+        {
+            data = dataArray[index];
+        }
     }
 }
