@@ -351,7 +351,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Vida
   vida: 300
+  vidaMaxima: 300
+  tempoInvulneravel: 2
+  intervaloPiscar: 0.1
+  corInvulneravel: {r: 0.6, g: 0, b: 1, a: 1}
   state: 0
+  comportamento: 0
 --- !u!114 &105416869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,7 +750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -192, y: -143.22073}
+  m_AnchoredPosition: {x: -313, y: -196.97073}
   m_SizeDelta: {x: 47.6524, y: 47.6524}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &628184759
@@ -1233,7 +1238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -270, y: 142.46835}
+  m_AnchoredPosition: {x: -391, y: 187.21835}
   m_SizeDelta: {x: 160, y: 23.0633}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1322209980
@@ -1406,7 +1411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -254.42468, y: -143.69727}
+  m_AnchoredPosition: {x: -375.42468, y: -197.44727}
   m_SizeDelta: {x: 47.6524, y: 47.6524}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1415316409
@@ -2079,7 +2084,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Vida
   vida: 4
+  vidaMaxima: 300
+  tempoInvulneravel: 2
+  intervaloPiscar: 0.1
+  corInvulneravel: {r: 0.6, g: 0, b: 1, a: 1}
   state: 0
+  comportamento: 0
 --- !u!1 &2091324953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2145,7 +2155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -313.9902, y: -144.1738}
+  m_AnchoredPosition: {x: -434.9902, y: -197.9238}
   m_SizeDelta: {x: 47.6524, y: 47.6524}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2112056016
