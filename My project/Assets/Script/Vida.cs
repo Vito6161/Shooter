@@ -21,6 +21,7 @@ public class Vida : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color corOriginal;
     private Coroutine rotinaInvulnerabilidade;
+    private Animator anim => GetComponent<Animator>();
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class Vida : MonoBehaviour
         if (spriteRenderer != null)
             corOriginal = spriteRenderer.color;
     }
+
 
     public void CausarDano(int dano)
     {
@@ -44,9 +46,6 @@ public class Vida : MonoBehaviour
             AtualizarEstado();
         }
 
-        if (gameObject.CompareTag("Player"))
-            Debug.Log($"VIDA {vida} | STATE: {state}");
-
         if (vida <= 0)
             Morte();
     }
@@ -56,16 +55,25 @@ public class Vida : MonoBehaviour
         float porcentagemVida = (float)vida / vidaMaxima;
 
         if (porcentagemVida > 0.5f)
+        {
             state = 0;
+        }
+
         else if (porcentagemVida > 0.2f)
+        {
             state = 1;
+        }
         else
+        {
             state = 2;
+        }
 
         if (state != estadoAnterior)
         {
             estadoAnterior = state;
             comportamento = 0;
+
+            anim.SetBool("Transition", true);
 
             StateOM.OnStateChanged(state);
 
@@ -84,6 +92,7 @@ public class Vida : MonoBehaviour
 
     private IEnumerator Invulnerabilidade()
     {
+        anim.SetBool("Transition", true);
         invulneravel = true;
 
         float tempoDecorrido = 0f;
@@ -105,6 +114,27 @@ public class Vida : MonoBehaviour
 
         invulneravel = false;
         rotinaInvulnerabilidade = null;
+
+        switch(state)
+        {
+            case 0:
+                anim.SetBool("Estado1", true);
+                anim.SetBool("Estado2", false);
+                anim.SetBool("Estado3", false);
+                break;
+            case 1:
+                anim.SetBool("Estado1", false);
+                anim.SetBool("Estado2", true);
+                anim.SetBool("Estado3", false);
+                break;
+            case 2:
+                anim.SetBool("Estado1", false);
+                anim.SetBool("Estado2", false);
+                anim.SetBool("Estado3", true);
+                break;
+        }
+
+        anim.SetBool("Transition", false);
     }
 
     public int ProximoComportamento()

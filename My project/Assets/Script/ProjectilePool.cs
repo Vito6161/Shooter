@@ -7,6 +7,8 @@ public class ProjectilePool : MonoBehaviour
     [SerializeField] private Projetil prefab;
     [SerializeField] private int quantidadeInicial = 20;
 
+    private Animator anim => GameObject.FindGameObjectWithTag("Boss").GetComponent<Animator>();
+
     private int countProjetil = 0;
     private int criados = 0;
 
@@ -91,16 +93,28 @@ public class ProjectilePool : MonoBehaviour
                 case 0:
                     countProjetil++;
                     projetil.projetilIndex = 0;
+
+                    anim.SetBool("Ataque1", true);
+                    anim.SetBool("Ataque2", false);
+                    anim.SetBool("Ataque3", false);
                     break;
 
                 case 1:
                     countProjetil++;
                     projetil.projetilIndex = 1;
+
+                    anim.SetBool("Ataque1", false);
+                    anim.SetBool("Ataque2", true);
+                    anim.SetBool("Ataque3", false);
                     break;
 
                 case 2:
                     countProjetil = 0;
                     projetil.projetilIndex = 2;
+
+                    anim.SetBool("Ataque1", false);
+                    anim.SetBool("Ataque2", false);
+                    anim.SetBool("Ataque3", true);
                     break;
             }
         }
