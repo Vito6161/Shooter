@@ -134,15 +134,35 @@ public class ProjectilePool : MonoBehaviour
         }
     }
 
-    private void UpdateData(int index)
+    private void UpdateData()
     {
+        int bossState = 0;
+
         if (gameObject.name == "Pool")
         {
             data = dataArray[0];
         }
         else
         {
-            data = dataArray[index];
+            //data = dataArray[index];
+
+            if(anim.GetBool("Estado1"))
+            {
+                bossState = 0;
+            }
+            else if(anim.GetBool("Estado2"))
+            {
+                bossState = 1;
+            }
+            else if(anim.GetBool("Estado3"))
+            {
+                bossState = 2;
+            }
+            //Debug.Log($"{bossState} || {anim.GetBool("Estado1")} || {anim.GetBool("Estado2")} || {anim.GetBool("Estado3")} ");
+
+            data = dataArray[bossState];
+                
+
         }
     }
 }

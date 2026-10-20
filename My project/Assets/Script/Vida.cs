@@ -75,7 +75,7 @@ public class Vida : MonoBehaviour
 
             anim.SetBool("Transition", true);
 
-            StateOM.OnStateChanged(state);
+            //StateOM.OnStateChanged(state);
 
             Debug.Log($"Boss: estado de vida {state}");
 
@@ -93,6 +93,9 @@ public class Vida : MonoBehaviour
     private IEnumerator Invulnerabilidade()
     {
         anim.SetBool("Transition", true);
+        anim.SetBool("Estado1", false);
+        anim.SetBool("Estado2", false);
+        anim.SetBool("Estado3", false);
         invulneravel = true;
 
         float tempoDecorrido = 0f;
@@ -119,20 +122,16 @@ public class Vida : MonoBehaviour
         {
             case 0:
                 anim.SetBool("Estado1", true);
-                anim.SetBool("Estado2", false);
-                anim.SetBool("Estado3", false);
                 break;
             case 1:
-                anim.SetBool("Estado1", false);
                 anim.SetBool("Estado2", true);
-                anim.SetBool("Estado3", false);
                 break;
             case 2:
-                anim.SetBool("Estado1", false);
-                anim.SetBool("Estado2", false);
                 anim.SetBool("Estado3", true);
                 break;
         }
+
+        StateOM.OnStateChanged();
 
         anim.SetBool("Transition", false);
     }
@@ -170,11 +169,11 @@ public class Vida : MonoBehaviour
 
 public class StateOM
 {
-    public static event Action<int> StateChanged;
+    public static event Action StateChanged;
 
-    public static void OnStateChanged(int index)
+    public static void OnStateChanged()
     {
-        StateChanged?.Invoke(index);
+        StateChanged?.Invoke();
     }
 
     public static event Action<bool> EndGame;

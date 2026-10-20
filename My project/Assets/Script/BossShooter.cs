@@ -13,9 +13,11 @@ public class BossShooter : MonoBehaviour
 
     private Vida state => gameObject.GetComponent<Vida>();
 
+    private Animator anim => GetComponent<Animator>();
+
     void Start()
     {
-        UpdateStats(state.state);
+        UpdateStats();
     }
 
     void OnEnable()
@@ -58,9 +60,25 @@ public class BossShooter : MonoBehaviour
         
     }
 
-    private void UpdateStats(int index)
+    private void UpdateStats()
     {
-        data = dataArray[index];
+        int bossState = 0;
+
+        if(anim.GetBool("Estado1"))
+        {
+            bossState = 0;
+        }
+        else if(anim.GetBool("Estado2"))
+        {
+            bossState = 1;
+        }
+        else if(anim.GetBool("Estado3"))
+        {
+             bossState = 2;
+        }
+
+        data = dataArray[bossState];
+
         intervalo = data.intervalo;
     }
 }
