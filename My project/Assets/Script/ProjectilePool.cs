@@ -7,8 +7,6 @@ public class ProjectilePool : MonoBehaviour
     [SerializeField] private Projetil prefab;
     [SerializeField] private int quantidadeInicial = 20;
 
-    private Animator anim => GameObject.FindGameObjectWithTag("Boss").GetComponent<Animator>();
-
     private int countProjetil = 0;
     private int criados = 0;
 
@@ -17,15 +15,6 @@ public class ProjectilePool : MonoBehaviour
 
     private ObjectPool<Projetil> pool;
 
-    private void OnEnable()
-    {
-        StateOM.StateChanged += UpdateData;
-    }
-
-    private void OnDisable()
-    {
-        StateOM.StateChanged -= UpdateData;
-    }
 
     private void Awake()
     {
@@ -85,40 +74,7 @@ public class ProjectilePool : MonoBehaviour
     {
         Projetil projetil = pool.Get();
 
-        if (gameObject.name != "Pool")
-        {
-            switch (countProjetil)
-            {
-                default:
-                case 0:
-                    countProjetil++;
-                    projetil.projetilIndex = 0;
-
-                    anim.SetBool("Ataque1", true);
-                    anim.SetBool("Ataque2", false);
-                    anim.SetBool("Ataque3", false);
-                    break;
-
-                case 1:
-                    countProjetil++;
-                    projetil.projetilIndex = 1;
-
-                    anim.SetBool("Ataque1", false);
-                    anim.SetBool("Ataque2", true);
-                    anim.SetBool("Ataque3", false);
-                    break;
-
-                case 2:
-                    countProjetil = 0;
-                    projetil.projetilIndex = 2;
-
-                    anim.SetBool("Ataque1", false);
-                    anim.SetBool("Ataque2", false);
-                    anim.SetBool("Ataque3", true);
-                    break;
-            }
-        }
-
+        projetil.projetilIndex = countProjetil;
         projetil.cor = data.cor;
         projetil.dano = data.dano;
         projetil.velocidade = data.velocidade;
@@ -134,35 +90,10 @@ public class ProjectilePool : MonoBehaviour
         }
     }
 
-    private void UpdateData()
+    public void UpdateData(int state, int projetil)
     {
-        int bossState = 0;
-
-        if (gameObject.name == "Pool")
-        {
-            data = dataArray[0];
-        }
-        else
-        {
-            //data = dataArray[index];
-
-            if(anim.GetBool("Estado1"))
-            {
-                bossState = 0;
-            }
-            else if(anim.GetBool("Estado2"))
-            {
-                bossState = 1;
-            }
-            else if(anim.GetBool("Estado3"))
-            {
-                bossState = 2;
-            }
-            //Debug.Log($"{bossState} || {anim.GetBool("Estado1")} || {anim.GetBool("Estado2")} || {anim.GetBool("Estado3")} ");
-
-            data = dataArray[bossState];
+        data = dataArray[state];
+        countProjetil = projetil;
                 
-
-        }
     }
 }

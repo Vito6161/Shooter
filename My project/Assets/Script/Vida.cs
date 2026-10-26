@@ -41,8 +41,11 @@ public class Vida : MonoBehaviour
         vida -= dano;
         vida = Mathf.Max(vida, 0);
 
+        
+
         if (!gameObject.CompareTag("Player"))
         {
+            anim.SetFloat("Vida", vida);
             AtualizarEstado();
         }
 

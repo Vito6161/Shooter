@@ -42,6 +42,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque2
     m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: Vida
+    m_EventTreshold: 200
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6593924763558486814}
   m_Solo: 0
@@ -169,6 +172,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque2
     m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: Vida
+    m_EventTreshold: 100
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -615332756313042337}
   m_Solo: 0
@@ -197,6 +203,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque3
     m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: Vida
+    m_EventTreshold: 100
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1810260917022516112}
   m_Solo: 0
@@ -225,6 +234,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque1
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: Vida
+    m_EventTreshold: 100
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7285966763349335350}
   m_Solo: 0
@@ -324,7 +336,7 @@ AnimatorStateMachine:
     m_Position: {x: 110, y: 100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4272129966122841189}
-    m_Position: {x: 400, y: -190, z: 0}
+    m_Position: {x: 400, y: -170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6593924763558486814}
     m_Position: {x: 400, y: -90, z: 0}
@@ -333,16 +345,16 @@ AnimatorStateMachine:
     m_Position: {x: 400, y: 10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8574584390037994683}
-    m_Position: {x: 550, y: 150, z: 0}
+    m_Position: {x: 550, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -615332756313042337}
-    m_Position: {x: 550, y: 240, z: 0}
+    m_Position: {x: 550, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1810260917022516112}
     m_Position: {x: 550, y: 400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7285966763349335350}
-    m_Position: {x: -110, y: 270, z: 0}
+    m_Position: {x: -110, y: 250, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9222339673630399151}
     m_Position: {x: -110, y: 360, z: 0}
@@ -372,7 +384,8 @@ AnimatorState:
   m_Transitions:
   - {fileID: -39197647107279396}
   - {fileID: -8696988475814678125}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 7384155291952362113}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -410,6 +423,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque3
     m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: Vida
+    m_EventTreshold: 100
+  - m_ConditionMode: 4
+    m_ConditionEvent: Vida
+    m_EventTreshold: 200
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1810260917022516112}
   m_Solo: 0
@@ -438,6 +457,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Estado1
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: Vida
+    m_EventTreshold: 200
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2558300452699465477}
   m_Solo: 0
@@ -510,6 +532,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Estado3
     m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: Vida
+    m_EventTreshold: 100
+  - m_ConditionMode: 4
+    m_ConditionEvent: Vida
+    m_EventTreshold: 200
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -615332756313042337}
   m_Solo: 0
@@ -538,6 +566,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Estado2
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: Vida
+    m_EventTreshold: 100
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2558300452699465477}
   m_Solo: 0
@@ -594,6 +625,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque1
     m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: Vida
+    m_EventTreshold: 100
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8574584390037994683}
   m_Solo: 0
@@ -622,6 +656,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Estado1
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: Vida
+    m_EventTreshold: 200
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2558300452699465477}
   m_Solo: 0
@@ -687,6 +724,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: Vida
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -715,6 +758,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque2
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: Vida
+    m_EventTreshold: 100
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 9222339673630399151}
   m_Solo: 0
@@ -743,6 +789,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque3
     m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: Vida
+    m_EventTreshold: 200
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7621995720821030216}
   m_Solo: 0
@@ -771,6 +820,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Estado1
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: Vida
+    m_EventTreshold: 200
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2558300452699465477}
   m_Solo: 0
@@ -870,6 +922,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Estado2
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: Vida
+    m_EventTreshold: 100
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2558300452699465477}
   m_Solo: 0
@@ -898,6 +953,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque3
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: Vida
+    m_EventTreshold: 100
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 9074395031440659251}
   m_Solo: 0
@@ -935,6 +993,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Ataque3
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: Vida
+    m_EventTreshold: 100
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7285966763349335350}
   m_Solo: 0
@@ -972,6 +1033,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque3
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: Vida
+    m_EventTreshold: 100
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 9074395031440659251}
   m_Solo: 0
@@ -1000,6 +1064,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Estado2
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: Vida
+    m_EventTreshold: 100
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2558300452699465477}
   m_Solo: 0
@@ -1037,6 +1104,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Ataque3
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: Vida
+    m_EventTreshold: 100
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 9222339673630399151}
   m_Solo: 0
@@ -1108,6 +1178,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Ataque3
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: Vida
+    m_EventTreshold: 200
+  - m_ConditionMode: 3
+    m_ConditionEvent: Vida
+    m_EventTreshold: 100
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8574584390037994683}
   m_Solo: 0
@@ -1150,6 +1226,18 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &7384155291952362113
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3914e7adb6ed5a6498569007902b3440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1102 &8574584390037994683
 AnimatorState:
   serializedVersion: 6
@@ -1192,6 +1280,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque1
     m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: Vida
+    m_EventTreshold: 200
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4272129966122841189}
   m_Solo: 0
