@@ -8,9 +8,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Transition
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Ataque3
     m_EventTreshold: 0
@@ -37,9 +34,6 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Estado1
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
     m_ConditionEvent: Ataque2
     m_EventTreshold: 0
   - m_ConditionMode: 3
@@ -59,6 +53,20 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-8381145262191160880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c239a1b3ab82448a63426ee49a2eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  state: 0
+  projetil: 2
 --- !u!1101 &-7995430660989273373
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -69,15 +77,6 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: Transition
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: Estado1
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado2
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado3
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Ataque1
@@ -110,9 +109,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Transition
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Ataque3
     m_EventTreshold: 0
@@ -143,7 +139,8 @@ AnimatorState:
   m_Transitions:
   - {fileID: 1158784614016705853}
   - {fileID: 8795250001856473760}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 6846883266902617501}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -167,9 +164,6 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Estado2
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
     m_ConditionEvent: Ataque2
     m_EventTreshold: 0
   - m_ConditionMode: 3
@@ -189,6 +183,18 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-7116954308124582264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaaaa30877f3e654db2a746ecd8079f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1101 &-6098526166937627344
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -197,9 +203,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Estado2
-    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque3
     m_EventTreshold: 0
@@ -220,6 +223,20 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-5707352719067493838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e210ac687937f8a45862e206ee250f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ataque3_1
+  state: 2
+  projetil: 3
 --- !u!1101 &-5693845793052440683
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -228,9 +245,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Estado3
-    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque1
     m_EventTreshold: 0
@@ -251,6 +265,20 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-5683109125644106385
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c239a1b3ab82448a63426ee49a2eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ataque2_1
+  state: 1
+  projetil: 2
 --- !u!1101 &-5676474158187257943
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -258,13 +286,7 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Transition
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado3
-    m_EventTreshold: 0
+  m_Conditions: []
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2558300452699465477}
   m_Solo: 0
@@ -279,6 +301,20 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-5536054210088626955
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3914e7adb6ed5a6498569007902b3440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ataque1_1
+  state: 1
+  projetil: 1
 --- !u!1101 &-5465462043523199389
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -291,22 +327,10 @@ AnimatorStateTransition:
     m_ConditionEvent: Transition
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: Estado1
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado2
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado3
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
     m_ConditionEvent: Ataque1
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Ataque2
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado3
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4272129966122841189}
@@ -339,16 +363,16 @@ AnimatorStateMachine:
     m_Position: {x: 400, y: -170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6593924763558486814}
-    m_Position: {x: 400, y: -90, z: 0}
+    m_Position: {x: 400, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7621995720821030216}
     m_Position: {x: 400, y: 10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8574584390037994683}
-    m_Position: {x: 550, y: 160, z: 0}
+    m_Position: {x: 550, y: 150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -615332756313042337}
-    m_Position: {x: 550, y: 270, z: 0}
+    m_Position: {x: 550, y: 280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1810260917022516112}
     m_Position: {x: 550, y: 400, z: 0}
@@ -357,7 +381,7 @@ AnimatorStateMachine:
     m_Position: {x: -110, y: 250, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9222339673630399151}
-    m_Position: {x: -110, y: 360, z: 0}
+    m_Position: {x: -120, y: 370, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9074395031440659251}
     m_Position: {x: -110, y: 470, z: 0}
@@ -411,9 +435,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Transition
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: Estado2
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Ataque1
     m_EventTreshold: 0
@@ -451,12 +472,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Transition
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado1
-    m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: Vida
     m_EventTreshold: 200
@@ -494,7 +509,8 @@ AnimatorState:
   - {fileID: 3817609245494842336}
   - {fileID: 5363234423310845139}
   - {fileID: 5036039970832683985}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: -7116954308124582264}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -520,17 +536,11 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: Transition
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: Estado2
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Ataque1
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque2
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado3
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: Vida
@@ -560,12 +570,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Transition
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado2
-    m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: Vida
     m_EventTreshold: 100
@@ -596,7 +600,8 @@ AnimatorState:
   m_Transitions:
   - {fileID: 5209424195204996258}
   - {fileID: -6098526166937627344}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: -5683109125644106385}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -619,9 +624,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Estado2
-    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque1
     m_EventTreshold: 0
@@ -650,12 +652,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Transition
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado1
-    m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: Vida
     m_EventTreshold: 200
@@ -683,24 +679,6 @@ AnimatorController:
   serializedVersion: 6
   m_AnimatorParameters:
   - m_Name: Transition
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: Estado1
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: Estado2
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: Estado3
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -744,6 +722,20 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   m_EvaluateTransitionsOnStart: 1
+--- !u!114 &116355299923775756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3914e7adb6ed5a6498569007902b3440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ataque1_1
+  state: 2
+  projetil: 1
 --- !u!1101 &460835950874593572
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -752,9 +744,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Estado3
-    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque2
     m_EventTreshold: 0
@@ -784,9 +773,6 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Estado1
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
     m_ConditionEvent: Ataque3
     m_EventTreshold: 0
   - m_ConditionMode: 3
@@ -814,12 +800,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Transition
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado1
-    m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: Vida
     m_EventTreshold: 200
@@ -850,7 +830,8 @@ AnimatorState:
   m_Transitions:
   - {fileID: 2181715254480269546}
   - {fileID: -301309663580393762}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 4112666043287460484}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -875,15 +856,6 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: Transition
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: Estado1
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado2
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado3
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Ataque1
@@ -916,12 +888,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Transition
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado2
-    m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: Vida
     m_EventTreshold: 100
@@ -947,9 +913,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Estado3
-    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque3
     m_EventTreshold: 0
@@ -982,9 +945,6 @@ AnimatorStateTransition:
     m_ConditionEvent: Transition
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: Estado3
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
     m_ConditionEvent: Ataque1
     m_EventTreshold: 0
   - m_ConditionMode: 2
@@ -1010,6 +970,34 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &4112666043287460484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e210ac687937f8a45862e206ee250f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ataque3_1
+  state: 1
+  projetil: 3
+--- !u!114 &4369526541604996841
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c239a1b3ab82448a63426ee49a2eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ataque2_1
+  state: 2
+  projetil: 2
 --- !u!1101 &5036039970832683985
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1020,9 +1008,6 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: Transition
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: Estado3
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Ataque1
@@ -1058,12 +1043,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Transition
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado2
-    m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: Vida
     m_EventTreshold: 100
@@ -1091,9 +1070,6 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: Transition
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: Estado3
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Ataque1
@@ -1134,7 +1110,8 @@ AnimatorState:
   m_Transitions:
   - {fileID: -3690768505641402478}
   - {fileID: 553821262317092751}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: -8381145262191160880}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1159,15 +1136,6 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: Transition
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado1
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: Estado2
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Estado3
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque1
@@ -1198,6 +1166,20 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &6846883266902617501
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e210ac687937f8a45862e206ee250f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  state: 0
+  projetil: 3
 --- !u!1102 &7285966763349335350
 AnimatorState:
   serializedVersion: 6
@@ -1211,7 +1193,8 @@ AnimatorState:
   m_Transitions:
   - {fileID: -7779200262107687600}
   - {fileID: 460835950874593572}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 116355299923775756}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1238,6 +1221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3914e7adb6ed5a6498569007902b3440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  state: 0
+  projetil: 1
 --- !u!1102 &8574584390037994683
 AnimatorState:
   serializedVersion: 6
@@ -1251,7 +1236,8 @@ AnimatorState:
   m_Transitions:
   - {fileID: -1639884890220023798}
   - {fileID: -7483614608250418251}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: -5536054210088626955}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1274,9 +1260,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Estado1
-    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Ataque1
     m_EventTreshold: 0
@@ -1310,7 +1293,8 @@ AnimatorState:
   m_Transitions:
   - {fileID: -8825434029106203461}
   - {fileID: -5693845793052440683}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: -5707352719067493838}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1338,7 +1322,8 @@ AnimatorState:
   m_Transitions:
   - {fileID: -5676474158187257943}
   - {fileID: 2854371917605826135}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 4369526541604996841}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1

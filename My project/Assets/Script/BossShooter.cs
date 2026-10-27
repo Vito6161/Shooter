@@ -12,6 +12,7 @@ public class BossShooter : MonoBehaviour
 
     private void Update()
     {
+        /*
         if(count < intervalo)
         {
             count += Time.deltaTime;
@@ -22,16 +23,17 @@ public class BossShooter : MonoBehaviour
             float altura = transform.lossyScale.y / 2f;
 
             pontoDeDisparo = new Vector3(Random.Range(transform.position.x - largura, transform.position.x + largura), transform.position.y - altura, transform.position.z);
-            Atirar();
+            Atirar(pontoDeDisparo);
             count = 0;
         }
+        */
     }
 
-    private void Atirar()
+    public void Atirar(Vector3 ponto)
     { 
         Projetil projetil = pool.PegarProjetil();
 
-        projetil.transform.position = pontoDeDisparo;
+        projetil.transform.position = ponto;
 
         projetil.Atirar(Vector2.down);
         

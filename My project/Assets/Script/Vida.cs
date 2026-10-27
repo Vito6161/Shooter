@@ -38,7 +38,7 @@ public class Vida : MonoBehaviour
         if (gameObject.CompareTag("Boss") && invulneravel)
             return;
 
-        vida -= dano;
+        if(!anim.GetBool("Transition")) vida -= dano;
         vida = Mathf.Max(vida, 0);
 
         
@@ -46,59 +46,16 @@ public class Vida : MonoBehaviour
         if (!gameObject.CompareTag("Player"))
         {
             anim.SetFloat("Vida", vida);
-            AtualizarEstado();
         }
 
         if (vida <= 0)
             Morte();
     }
 
-    private void AtualizarEstado()
+
+
+    public IEnumerator Invulnerabilidade()
     {
-        float porcentagemVida = (float)vida / vidaMaxima;
-
-        if (porcentagemVida > 0.5f)
-        {
-            state = 0;
-        }
-
-        else if (porcentagemVida > 0.2f)
-        {
-            state = 1;
-        }
-        else
-        {
-            state = 2;
-        }
-
-        if (state != estadoAnterior)
-        {
-            estadoAnterior = state;
-            comportamento = 0;
-
-            anim.SetBool("Transition", true);
-
-            //StateOM.OnStateChanged(state);
-
-            Debug.Log($"Boss: estado de vida {state}");
-
-            if (gameObject.CompareTag("Boss"))
-            {
-                if (rotinaInvulnerabilidade != null)
-                    StopCoroutine(rotinaInvulnerabilidade);
-
-                rotinaInvulnerabilidade =
-                    StartCoroutine(Invulnerabilidade());
-            }
-        }
-    }
-
-    private IEnumerator Invulnerabilidade()
-    {
-        anim.SetBool("Transition", true);
-        anim.SetBool("Estado1", false);
-        anim.SetBool("Estado2", false);
-        anim.SetBool("Estado3", false);
         invulneravel = true;
 
         float tempoDecorrido = 0f;
@@ -120,21 +77,6 @@ public class Vida : MonoBehaviour
 
         invulneravel = false;
         rotinaInvulnerabilidade = null;
-
-        switch(state)
-        {
-            case 0:
-                anim.SetBool("Estado1", true);
-                break;
-            case 1:
-                anim.SetBool("Estado2", true);
-                break;
-            case 2:
-                anim.SetBool("Estado3", true);
-                break;
-        }
-
-        StateOM.OnStateChanged();
 
         anim.SetBool("Transition", false);
     }
@@ -172,12 +114,6 @@ public class Vida : MonoBehaviour
 
 public class StateOM
 {
-    public static event Action StateChanged;
-
-    public static void OnStateChanged()
-    {
-        StateChanged?.Invoke();
-    }
 
     public static event Action<bool> EndGame;
 

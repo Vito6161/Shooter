@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7977326107837422840}
   - component: {fileID: 3339383805560039689}
   - component: {fileID: 8510897013780421578}
+  - component: {fileID: 1525826386450635342}
   m_Layer: 0
   m_Name: BossProjectile3
   m_TagString: Projetil
@@ -172,5 +173,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Projetil3
   velocidade: 30
   dano: 1
-  cor: {r: 1, g: 0, b: 0.8163532, a: 0}
-  bossProjectile: 0
+--- !u!114 &1525826386450635342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935041401268430786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd3b38e74392c345b1f0badb584562c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Projetil
+  velocidade: 30
+  dano: 1
+  cor: {r: 1, g: 0, b: 0.94493365, a: 0}
+  bossProjectile: 1
+  projetilIndex: 0
